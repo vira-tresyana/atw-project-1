@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User</title>
+	<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+	<%- include('../components/navbar') %>
+	<a href="/users/create">Registrasi</a>
+
+	<h1>Daftar User (<%=users.length %>)</h1>
+	<ul>
+		<% if(users.length > 0) { %>
+			<% users.forEach(function(user) { %>
+				<li><a href="/users/<%=user.id %>">
+					<%=user.name.toUpperCase() %></a>
+				</li>
+			<% }) %>
+		<% } else { %>
+		<li>data user kosong.</li>
+	<% } %>
+	</ul>
+	<footer>
+		<p>&copy; 2021 vira.tresyana</p>
+	</footer>
+</body>
+</html>
